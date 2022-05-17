@@ -1,0 +1,23 @@
+.form-group2 {
+    position: relative;
+    left:230px;
+    top:-65px;
+}
+
+.form-group3 {
+    position: relative;
+    left:460px;
+    top:-130px;
+}
+
+.form-group4 {
+    position: relative;
+    left:700px;
+    top:-200px;
+}
+
+.book{
+    margin-top: -15%;
+    position: relative;
+
+}

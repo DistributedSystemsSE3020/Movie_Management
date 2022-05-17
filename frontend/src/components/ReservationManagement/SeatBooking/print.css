@@ -1,0 +1,133 @@
+.print{
+   font-size: xx-large;
+   color:  blue;
+}
+
+.section {
+    grid-template-rows:    repeat(2.5, 60px);
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+    height: 60%;
+
+}
+
+.section > div {
+    border: 2px solid rgb(0, 0, 0);
+}
+.section > div:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.91);
+    color: white;
+}
+
+.disabled {
+    background-color: rgba(245, 22, 22, 0.91);
+    color: white;
+}
+.booked {
+    background-color:  rgba(1, 86, 213, 0.99);
+    color: white;
+}
+
+.section .disabled:hover {
+    cursor: not-allowed;
+}
+
+.button_booking {
+    margin-top: 10px;
+    border-radius: 5px;
+    background-image: linear-gradient(red, red, red, rgb(0, 0, 0));
+    padding:10px 15px;
+    color: #ffffff;
+    border: none;
+}
+
+.button_booking:hover {
+    background-image: linear-gradient(rgb(0, 0, 0), red, red, rgb(255, 0, 0));
+}
+
+.input {
+    border: 2px solid rgb(255, 0, 0);
+    border-radius: 4px;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+.seat_booking_div1{
+    width: 1552px;
+    height: 700px;
+    background-color: #ffffff;
+}
+
+.seat_booking_div2{
+    position: absolute;
+    top: 22%;
+    left: 14%;
+    width: 86%;
+    height: 600px;
+    background-color: #ffffff;
+}
+
+.main_text_booing{
+    color:black;
+    font-weight: bold;
+    font-weight: 18px;
+}
+
+.homeimg_screen{
+    position: absolute;
+z-index: 4;
+    width: 500px;
+    top:60%;
+    left: 15%;
+    -ms-transform: rotate(270deg); /* IE 9 */
+    transform: rotate(270deg);
+}
+
+.homeimg_img{
+    position: absolute;
+    z-index: 4;
+    width: 650px;
+    height: auto;
+    top:50%;
+    left: 50%;
+}
+
+.circle1 {
+    height: 20px;
+    width: 20px;
+    background-color: rgba(1, 86, 213, 0.99);
+    border-radius: 50%;
+    margin-left: 20px;
+border:2px solid black;}
+
+.circle2 {
+    height: 20px;
+    width: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin-left: 20px;
+    border:2px solid black;}
+
+.circle3 {
+    height: 20px;
+    width: 20px;
+    background-color: rgba(245, 22, 22, 0.91);
+    border-radius: 50%;
+    margin-left: 20px;
+    border:2px solid black;}
+
+.list_booking{
+    display: flex;
+    margin-left: 20px;
+    z-index: 7;
+    position: absolute;
+    top:100%;
+    left:20%;
+}
+
+.list_booking1{
+    margin-left: 20px;
+}

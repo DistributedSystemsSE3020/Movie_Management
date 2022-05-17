@@ -1,0 +1,279 @@
+.container_home {
+    width: 100%;
+    height: 2800px;
+}
+
+.hpmediv1 {
+    margin: 0;
+    padding: 0;
+}
+
+.homeimg {
+    width: 1600px;
+}
+
+.p1 {
+    font-size: 17px;
+    color: black;
+    font-weight: 600;
+    margin-left: 0%;
+}
+
+.div_final1 {
+    margin-left: 0%;
+    position: absolute;
+    right: 32%;
+}
+
+.div_final2 {
+    margin-left: 0%;
+    position: absolute;
+    right: 8%;
+}
+
+.div_slides {
+    width: 100%;
+    height: 800px;
+    background-color: rgb(255, 255, 255);
+}
+
+.container2 {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: #0000008d;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 0.5s ease;
+}
+
+.container2:hover .overlay {
+    bottom: 0;
+    height: 100%;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/*slider*/
+.slidershow1 {
+    margin-top: 50px;
+    width: 500px;
+    height: 400px;
+    overflow: hidden;
+    background-color: black;
+    border-radius: 2px;
+    border: 3px solid red;
+    box-shadow: 0 4px 8px 0 black, 0 3px 10px black;
+}
+
+.middle1 {
+    position: absolute;
+    right: 50%;
+    top: 365%;
+    transform: translate(-50%, -50%);
+}
+
+.slidershow2 {
+    margin-top: 50px;
+    width: 500px;
+    height: 400px;
+    overflow: hidden;
+    background-color: black;
+    border-radius: 2px;
+    border: 3px solid red;
+    box-shadow: 0 4px 8px 0 black, 0 3px 10px black;
+}
+
+.middle2 {
+    position: absolute;
+    right: 17.5%;
+    top: 365%;
+    transform: translate(-50%, -50%);
+}
+
+.slidershow3 {
+    margin-top: 50px;
+    width: 500px;
+    height: 400px;
+    overflow: hidden;
+    background-color: black;
+    border-radius: 2px;
+    border: 3px solid red;
+    box-shadow: 0 4px 8px 0 black, 0 3px 10px black;
+}
+
+.middle3 {
+    position: absolute;
+    right: -15%;
+    top: 365%;
+    transform: translate(-50%, -50%);
+}
+
+.topic1 {
+    color: black;
+    font-size: 40px;
+    margin-left: 12%;
+    font-weight: 700;
+    margin-top: 3%;
+}
+
+.topic2 {
+
+    position: absolute;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    left: 47%;
+    font-weight: 700;
+    top: 333%;
+}
+
+
+.topic3 {
+    color: black;
+    font-size: 40px;
+    left: 78%;
+    font-weight: 700;
+    top: 333%;
+    position: absolute;
+}
+
+
+.navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.bar {
+    width: 50px;
+    height: 10px;
+    border: 3px solid #ff0000;
+    background: black;
+    margin: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 8px 16px 0 black, 0 6px 20px black;
+}
+
+.bar:hover {
+    background: #ff0000;
+    border: 3px solid #ff0000;
+}
+
+input[name="r"] {
+    position: absolute;
+    visibility: hidden;
+}
+
+.slides {
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+
+.slide {
+    width: 20%;
+    transition: 0.6s;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+#r1:checked ~ .s1 {
+    margin-left: 0;
+}
+
+#r2:checked ~ .s1 {
+    margin-left: -20%;
+}
+
+#r3:checked ~ .s1 {
+    margin-left: -40%;
+}
+
+#r4:checked ~ .s1 {
+    margin-left: -60%;
+}
+
+#r5:checked ~ .s1 {
+    margin-left: -80%;
+}
+
+
+#r6:checked ~ .s1 {
+    margin-left: 0;
+}
+
+#r7:checked ~ .s1 {
+    margin-left: -20%;
+}
+
+#r8:checked ~ .s1 {
+    margin-left: -40%;
+}
+
+#r9:checked ~ .s1 {
+    margin-left: -60%;
+}
+
+#r10:checked ~ .s1 {
+    margin-left: -80%;
+}
+
+
+#r11:checked ~ .s1 {
+    margin-left: 0;
+}
+
+#r12:checked ~ .s1 {
+    margin-left: -20%;
+}
+
+#r13:checked ~ .s1 {
+    margin-left: -40%;
+}
+
+#r14:checked ~ .s1 {
+    margin-left: -60%;
+}
+
+#r15:checked ~ .s1 {
+    margin-left: -80%;
+}
+
+
+/*end slider*/
+
+.allMovie_text1 {
+    color: black;
+    font-weight: 800;
+    font-size: 50px;
+}
