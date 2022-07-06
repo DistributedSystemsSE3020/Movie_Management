@@ -1,4 +1,4 @@
-# Movie_Management
+# Movie Ticket Reservation System
 
 Group Leader - IT20117146 (DimagiPerera)
 
