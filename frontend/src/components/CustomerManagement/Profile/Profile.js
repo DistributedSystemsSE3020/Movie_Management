@@ -19,7 +19,7 @@ function Profile() {
     //getting user data
     useEffect(() => {
         async function fetchUser(){
-            await axios.get(`http://localhost:8070/customer/${user._id}`).then((res)=>{
+            await axios.get(`http://localhost:8280/customer/${user._id}`).then((res)=>{
                 //setting user
                 localStorage.setItem("user", JSON.stringify(res.data.result))
 
@@ -70,7 +70,7 @@ function Profile() {
         };
 
         if(window.confirm('Are you sure?\nThis action cannot be undone')){
-            await axios.delete(`http://localhost:8070/customer/deleteprofile/${user._id}`, config).then(() => {
+            await axios.delete(`http://localhost:8280/customer/${user._id}`, config).then(() => {
                 alert("Account deleted successfully")
                 localStorage.clear()
                 history.push('/customer/signin')

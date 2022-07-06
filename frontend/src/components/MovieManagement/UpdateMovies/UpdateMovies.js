@@ -47,7 +47,7 @@ function UpdateMovies(props) {
 
     useEffect(() => {
         async function fetchMovie() {
-            await axios.get(`http://localhost:8070/movie/movies/${props.match.params.id}`).then((res) => {
+            await axios.get(`http://localhost:8280/movies/${props.match.params.id}`).then((res) => {
                 setName(res.data.name)
                 setDirector(res.data.director)
                 setGenre(res.data.genre)
@@ -108,7 +108,7 @@ function UpdateMovies(props) {
         };
 
         try {
-            await axios.put(`http://localhost:8070/movie/movies/update/${props.match.params.id}`, updatedMovie, config);
+            await axios.put(`http://localhost:8280/movies/${props.match.params.id}`, updatedMovie, config);
             alert("Updated Successfully")
             history.push('/movie/movies')
         } catch (error) {
@@ -158,8 +158,8 @@ function UpdateMovies(props) {
         <div className="bg_signup2" align="center">
 
             <img
-                className="homeimg"
-                src="../images/downloadApp1.jpg"
+                className="homeimg2"
+                src="../images/m4.jpg"
                 alt="download from store"
             />
             <br/><br/>
@@ -170,9 +170,8 @@ function UpdateMovies(props) {
                     </div>
                 </div>
             </div>
-            <div className="card-form  form_signUp2">
+            <div className="form_signUp2">
                 <form onSubmit={update} className="boxSignUp2">
-                    <br/><br/> <br/><br/>
                     <div className="row">
 
                         <div className="col-12">
@@ -377,7 +376,7 @@ function UpdateMovies(props) {
                                             />
 
                                             <Button color="primary" variant="contained" component="span"
-                                                    className="button_3">
+                                                    className="button_3" style={{left:100}}>
                                                 <AddAPhotoIcon/> &nbsp; Upload Banner
                                             </Button>
                                         </label>

@@ -51,10 +51,11 @@
 
 .productGrid{
     display: grid;
-    grid-gap: 0.5rem;
-    padding: -30rem;
-    max-width: 4150px;
-    margin: 0 auto;
+    grid-gap: 1.9rem;
+    padding: -20rem;
+    width: 100%;
+    position:relative;
+    left:-200px;
 }
 
 @media (min-width: 600px) {
@@ -62,9 +63,9 @@
         grid-template-columns: repeat(1, 3fr);
     }
 }
-@media (min-width: 800px) {
+@media (min-width: 900px) {
     .productGrid {
-        grid-template-columns: repeat(3, 3fr);
+        grid-template-columns: repeat(4, 3fr);
     }
 }
 

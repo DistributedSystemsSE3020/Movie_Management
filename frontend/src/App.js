@@ -19,6 +19,11 @@ import MovieDetails from './components/MovieManagement/SingleMovie/SingleMovie';
 import UpdateMovies from './components/MovieManagement/UpdateMovies/UpdateMovies';
 import Reservation from './components/ReservationManagement/Reservation/Reservation';
 import BookMySeats from './components/ReservationManagement/SeatBooking/BookMySeats';
+import Cart from './components/CartManagement/Cart';
+import CardPayment from './components/PaymentManagement/CardPayment';
+import MobilePayment from './components/PaymentManagement/MobilePayment';
+import SelectPayment from './components/PaymentManagement/SelectPayment';
+import QRcode from './components/QRCode/QR';
 
 function App() {
   return (
@@ -40,7 +45,11 @@ function App() {
             <Route path="/movie/movies/update/:id" exact component={UpdateMovies}/>
             <Route path="/movie/movies/reservation/:id" exact component={Reservation}/> 
             <Route path="/seat" exact component={BookMySeats}/>
-
+            <Route path="/cart/:id/:type" exact component={Cart}/>
+            <Route path="/customer/card/addCardPayment" exact component={CardPayment}/>
+            <Route path="/customer/mobile/addmobile" exact component={MobilePayment}/>
+            <Route path="/customer/select" exact component={SelectPayment}/>
+            <Route path="/qr/:id" exact component={QRcode}/>
             <Footer/>
         </div>
       </Router>

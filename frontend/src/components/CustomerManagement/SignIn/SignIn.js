@@ -32,7 +32,7 @@ function Login() {
     try {
       //getting data from backend
       const { data } = await axios.post(
-        "http://localhost:8070/customer/signin",
+        "http://localhost:8280/customer/signinCustomer",
         { email, password },
         config
       );

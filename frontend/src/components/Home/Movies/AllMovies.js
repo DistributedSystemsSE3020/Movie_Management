@@ -4,7 +4,7 @@ import './AllMovies.css'
 import axios from 'axios'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import {blue} from '@material-ui/core/colors';
+
 
 function AllMovies() {
 
@@ -34,7 +34,7 @@ function AllMovies() {
   useEffect(() => { 
 
     async function getAllMovies() {
-      axios.post(`http://localhost:8070/movie`).then((res) => {
+      axios.get(`http://localhost:8280/movies/getMovies`).then((res) => {
         setMovies(res.data)  
       }).catch((error) => {
         alert("Failed to fetch the movies")
@@ -54,7 +54,7 @@ function AllMovies() {
 
   function handleSearch(event){
     const searchTerm = event.currentTarget.value
-    axios.post(`http://localhost:8070/movie`).then((res) => {
+    axios.get(`http://localhost:8280/movies/getMovies`).then((res) => {
       filterContent(res.data, searchTerm.toLowerCase())
     }).catch((error) => {
       alert("Failed to fetch movies")
@@ -62,7 +62,7 @@ function AllMovies() {
   }
   
   function Book(id){
-    history.push(`/patient/appointment/${id}`) ///
+    history.push(`/movie/movies`) ///
   }
 
     return (

@@ -30,7 +30,7 @@ function AdminLogin() {
         
         try {
             //getting data from backend
-            const {data} = await axios.post("http://localhost:8070/admin/signin", {email, password}, config);
+            const {data} = await axios.post("http://localhost:8280/admin/signin", {email, password}, config);
 
             //setting the customer authorization token
             localStorage.setItem("adminAuthToken", `Admin ${data.token}`)

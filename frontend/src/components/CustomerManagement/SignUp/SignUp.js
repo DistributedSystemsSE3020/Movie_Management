@@ -89,7 +89,7 @@ function SignUp() {
             const newCustomer = {firstname, lastname, email, nic, phone, address, password, imgUrl}
 
             try {
-                await axios.post("http://localhost:8070/customer/signupC", newCustomer , config);
+                await axios.post("http://localhost:8280/customer/signupCustomer", newCustomer , config);
                     alert("Registration Successful")
                     history.push('/customer/signin')
             } catch (error) {

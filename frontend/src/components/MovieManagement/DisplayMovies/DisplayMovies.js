@@ -26,7 +26,7 @@ function DisplayMovies() {
     }
 
     async function getAllMovies() {
-      axios.post(`http://localhost:8070/movie`).then((res) => {
+      axios.get(`http://localhost:8280/movies/getMovies`).then((res) => {
         setMovies(res.data)  
       }).catch((error) => {
         alert("Failed to fetch the movies")
@@ -46,7 +46,7 @@ function DisplayMovies() {
 
   function handleSearchAll(event){
     const searchTerm = event.currentTarget.value
-    axios.post(`http://localhost:8070/movie`).then((res) => {
+    axios.get(`http://localhost:8280/movies/getMovies`).then((res) => {
       filterContent(res.data, searchTerm.toLowerCase())
     }).catch((error) => {
       alert("Admin Failed to fetch movies")
@@ -62,14 +62,14 @@ function DisplayMovies() {
     return (
         <div className="container  display_movies"><br/><br/>
           <div className="row"> 
-              <div className="col-4"> 
+              <div className="col-4"> <br/><br/>
                 <div className="pb-2 px-3 d-flex flex-wrap align-items-center justify-content-between">
                   <h2 className='h1_displayMovies'>NOW SHOWING</h2>
                 </div>
               </div>
               <div className="col-5">
               {isAdmin === true ?
-                <div className="px-3 search search1" align="right">
+                <div className="px-3 search search1" align="right" style={{ marginTop:55,marginLeft:620 }}>
                   <input style={{ color:'black' }} className="search1"
                     type="text" 
                     name="search" 
@@ -84,11 +84,11 @@ function DisplayMovies() {
                 </div> 
               }  
           </div>
-        </div>
+        </div><br/><br/>
         <div className="productGrid"  > 
           {isAdmin && 
             <Button  className="productBtn "  style={{ color:'black', backgroundColor:'#0000008a',width:400 }} onClick={()=>addMovie()}>
-            <strong>Add Product</strong> <AddIcon/>
+            <strong>Add Movie</strong> <AddIcon/>
             </Button>  
           }
           {movies.map((Movie,key)=>( 

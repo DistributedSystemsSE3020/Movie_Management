@@ -24,6 +24,7 @@ function MovieDetails(props) {
   const [availableTimeTo, setAvailableTimeTo] = useState("");
   const [availableTimeFrom, setAvailableTimeFrom] = useState("");
   const [imgUrl, setImgUrl] = useState("");
+  const [time, setTime] = useState("");
   const history = useHistory();
   const [user, setUser] = useState("");
 
@@ -43,7 +44,7 @@ function MovieDetails(props) {
     }
     async function getMovieDetails() {
       axios
-        .get(`http://localhost:8070/movie/movies/${props.match.params.id}`)
+        .get(`http://localhost:8280/movies/${props.match.params.id}`)
         .then((res) => {
           setName(res.data.name);
           setDirector(res.data.director);
@@ -68,7 +69,7 @@ function MovieDetails(props) {
 
   async function deleteMovie(id) {
     await axios
-      .delete(`http://localhost:8070/movie/movies/delete/${id}`, config)
+      .delete(`http://localhost:8280/movies/${id}`, config)
       .then(() => {
         alert("Movie deleted successfully");
         history.push("/movie/movies");
@@ -82,11 +83,17 @@ function MovieDetails(props) {
     history.push(`/movie/movies/update/${id}`);
   }
 
+
+  const saveData=(Day)=>{
+    setTime(Day)
+  }
+  console.log(time)
+  
   function Book() {
-    history.push(`/movie/movies/reservation/${id}`);
+    localStorage.setItem("time",time);
+    
   }
 
-  console.log(price);
 
   return (
     <div className="main_div1" align="center">
@@ -126,12 +133,12 @@ function MovieDetails(props) {
                <p className="mb-0"><strong>Directors : </strong> {director}</p><br/>
                 
                 <p className="mb-0"><strong>Theaters :</strong> {theaters}</p><br/>
-                <h6><strong>Available Days and time</strong></h6><br/>
+                <h6><strong>Available Show Times</strong></h6><br/>
                 
               <p className="mb-0">
                 {" "}
                 {availableDay.map((Day) => (
-                  <span> {Day} </span>
+                  <span><button onClick={()=>saveData(Day)}>{Day}</button></span>
                 ))}
               </p>
               <p className="mb-0">
@@ -164,8 +171,9 @@ function MovieDetails(props) {
                   className="mx-2 productBtn button2"
                   style={{ backgroundColor: red[500] }}
                   onClick={() => Book()}
-                >
+                ><a href={`/movie/movies/reservation/${id}`} style={{color:'white'}}>
                   Make a Booking
+                  </a>
                 </button>
               </div>
             )}

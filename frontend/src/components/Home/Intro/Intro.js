@@ -12,15 +12,15 @@ function Intro() {
                 <div className="row introCard">
                     <div className="col-7 px-5 pt-5">
                         <div data-aos="fade-up"><br/><br/>
-                            <h1 className='h1'>Secure Your Health <br/> &emsp;&emsp;&emsp;Anytime Anywhere</h1>
+                            <h1 className='h1'>Filming Experience <br/> &emsp;&emsp;&emsp;Just Got Better</h1>
                         </div>
                         <br/>
                         <div data-aos="fade" className="px-3 pt-3 text-muted">
                             <p className='p'>
-                                Aspirus healthcare lets you to channel qualified doctors,receive a prescription if required, all from the comfort of your home. You can channel either a Physician or a specialist from our system. An appointment can be made 24/7 as your wish. Easy and convenient way to channel your doctor.
+                            Popcorn Scope is dedicated to lifting the bar in Sri Lanka's cinema experience, aiming to provide our guests with all the charm of old-school movie theaters, combined with cutting-edge sophistication and comfort that meets worldwide standards.
                             </p>
                             <p className='p'>
-                                Aspirus healthcare lets you to channel qualified doctors,receive a prescription if required, all from the comfort of your home. You can channel either a Physician or a specialist from our system. An appointment can be made 24/7 as your wish. Easy and convenient way to channel your doctor.
+                            Popcorn Scope is dedicated to lifting the bar in Sri Lanka's cinema experience, aiming to provide our guests with all the charm of old-school movie theaters, combined with cutting-edge sophistication and comfort that meets worldwide standards.
                             </p>
                         </div>
                     </div>

@@ -30,62 +30,12 @@ function Header() {
   const location = useLocation();
   const [sidebar, setSidebar] = useState(false);
 
-  const SidebarItem = [
-    {
-      title: "Home",
-      path: "/",
-      icon: <HomeIcon />,
-      cName: "nav-text",
-    },
-    {
-      title: "Profile",
-      path: `${URL}/profile`,
-      icon: <PersonIcon />,
-      cName: "nav-text",
-    },
-    {
-      title: "Pharmacy",
-      path: "/pharmacy/items",
-      icon: <LocalHospitalIcon />,
-      cName: "nav-text",
-    },
-    {
-      title: "Appointments",
-      path: `/Appointment/${user._id}`,
-      icon: <EventAvailableIcon />,
-      cName: "nav-text",
-    },
-    {
-      title: "Prescriptions",
-      path: `/prescription/history/${user._id}`,
-      icon: <AssignmentIcon />,
-      cName: "nav-text",
-    },
-    {
-      title: "Cart",
-      path: `/cart/${user._id}/shopping`,
-      icon: <ShoppingCartIcon />,
-      cName: "nav-text",
-    },
-    {
-      title: "Payment",
-      path: `/patient/payment/${user._id}`,
-      icon: <MonetizationOnIcon />,
-      cName: "nav-text",
-    },
-    {
-      title: "Feedback",
-      path: `/movie/movies`,
-      icon: <FeedbackIcon />,
-      cName: "nav-text",
-    },
-  ];
+ 
 
   useEffect(() => {
     //check whether user has signed in
     if (
       localStorage.getItem("customerAuthToken") ||
-      localStorage.getItem("doctorAuthToken") ||
       localStorage.getItem("adminAuthToken")
     ) {
       setIsSignedIn(true);
@@ -112,9 +62,6 @@ function Header() {
         setURL(`/customer`);
       }
 
-      if (localStorage.getItem("doctorAuthToken")) {
-        setURL(`/doctor`);
-      }
     } else {
       setIsSignedIn(false);
     }
@@ -157,18 +104,9 @@ function Header() {
         <nav className="navbar navbar-inverse navbar-expand-lg navbar-light fixed-top header-bg">
           <div className="width_header container-fluid ">
             <ul>
-              {sidebar ? (
-                <IconButton style={{ backgroundColor:"white"}} className="icon_sidebar">
-                  <DehazeIcon style={{ backgroundColor:"white"}}
-                    className="icon_sidebar"
-                    fontSize="large"
-                  />
-                </IconButton>
-              ) : (
-                <IconButton style={{ color:"white"}} className="icon_sidebar" onClick={showSidebar}>
-                  <DehazeIcon style={{ color:"white"}} className="icon_sidebar" fontSize="large" />
-                </IconButton>
-              )}
+             
+            
+              
             </ul>
             <div className="header-title">
               <h1 style={{ fontSize: 35, fontWeight: 700 }} onClick={home}>
@@ -245,26 +183,6 @@ function Header() {
 
 
 
-
-
-        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-          <ul className="nav-menu-items" onClick={showSidebar}>
-            <li className="mb-4 mt-3" align="center">
-              <img src="/images/Logo.png" width="150px" alt="logo" />
-            </li>
-            {SidebarItem.map((item, index) => {
-              return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    <span className="nav-span">{item.title}</span>
-                  </Link>
-                </li>
-              );
-            })}
-
-          </ul>
-        </nav>
       </div>
     </header>
   );

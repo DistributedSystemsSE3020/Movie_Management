@@ -93,9 +93,9 @@ function AddMovie() {
 
         try {
 
-            await axios.post("http://localhost:8070/movie/addM", newMovie, config);
+            await axios.post("http://localhost:8280/movies/addMovie", newMovie, config);
             alert("movie added successfully")
-            event.target.reset();
+            history.push('/movie/movies')
         } catch (error) {
             alert("failed to add the movie!");
 
@@ -143,11 +143,11 @@ function AddMovie() {
 
 
     return (
-        <div className="bg_signup" align="center">
+        <div className="bg_signup" align="center" >
 
-            <img
+            <img style={{height: 1150}}
                 className="homeimg"
-                src="../images/downloadApp1.jpg"
+                src="../images/m4.jpg"
                 alt="download from store"
             />
             <br/><br/>
@@ -161,13 +161,13 @@ function AddMovie() {
                 </div>
             </div>
             <div className="form_signUp">
-                <form style={{height: 800, width:1100, marginLeft:200}} onSubmit={add} className="boxSignUp"><br/><br/> <br/><br/>
+                <form style={{height: 900, width:1100, marginLeft:350,marginTop:-90}} onSubmit={add} className="boxSignUp"><br/><br/> <br/><br/>
                     <div className="row">
-
-                        <div style={{marginLeft:100}} className="col-10 ">
+                        <div style={{marginLeft:100,marginTop:50}} className="col-10 ">
                             <div className="row">
 
                                 <div className="col-xl-6 mb-4">
+                                <InputLabel id="demo-mutiple-chip-label"><strong style={{color:'black'}}>Movie Name</strong></InputLabel>
                                     <OutlinedInput className='form_input'
                                                    type="text"
                                                    name="name"
@@ -181,6 +181,7 @@ function AddMovie() {
                                 <br/>
 
                                 <div className="col-xl-6 mb-3">
+                                <InputLabel id="demo-mutiple-chip-label"><strong style={{color:'black'}}>Director</strong></InputLabel>
                                     <OutlinedInput className='form_input'
                                                    type="text"
                                                    name="director"
@@ -193,6 +194,7 @@ function AddMovie() {
                                 </div>
 
                                 <div className="col-xl-6 mb-3">
+                                <InputLabel id="demo-mutiple-chip-label"><strong style={{color:'black'}}>Genre</strong></InputLabel>
                                     <OutlinedInput className='form_input'
                                                    type="text"
                                                    name="genre"
@@ -205,6 +207,7 @@ function AddMovie() {
                                 </div>
 
                                 <div className="col-xl-6 mb-3">
+                                <InputLabel id="demo-mutiple-chip-label"><strong style={{color:'black'}}>Cast & Crew</strong></InputLabel>
                                     <OutlinedInput className='form_input'
                                                    type="text"
                                                    name="cast"
@@ -212,12 +215,12 @@ function AddMovie() {
                                                    placeholder="Cast & Crew"
                                                    onChange={(e) => setCast(e.target.value)}
                                                    required fullWidth
-                                                   inputProps={{style: {padding: 12}}}
+                                                   inputProps={{style: {padding: 22}}}
                                     />
                                 </div>
 
                                 <div className="col-xl-6 mb-3">
-                                    <InputLabel id="demo-mutiple-chip-label"><strong>Languages</strong></InputLabel>
+                                    <InputLabel id="demo-mutiple-chip-label"><strong style={{color:'black'}}>Languages</strong></InputLabel>
                                     <Select className='form_input'
                                             id="demo-mutiple-chip"
                                             multiple fullWidth
@@ -243,6 +246,7 @@ function AddMovie() {
                                 <br/>
 
                                 <div className="col-xl-6 mb-3">
+                                <InputLabel id="demo-mutiple-chip-label"><strong style={{color:'black'}}>Description</strong></InputLabel>
                                     <OutlinedInput className='form_input'
                                                    type="text"
                                                    name="description"
@@ -250,13 +254,13 @@ function AddMovie() {
                                                    placeholder="Description"
                                                    onChange={(e) => setDescription(e.target.value)}
                                                    required fullWidth
-                                                   inputProps={{style: {padding: 12}}}
+                                                   inputProps={{style: {padding: 32}}}
                                     />
                                 </div>
 
 
                                 <div className="col-xl-6 mb-3">
-                                    <InputLabel id="demo-mutiple-chip-label"><strong>Theaters</strong></InputLabel>
+                                    <InputLabel id="demo-mutiple-chip-label"><strong style={{color:'black'}}>Theaters</strong></InputLabel>
                                     <Select className='form_input'
                                             id="demo-mutiple-chip"
                                             multiple fullWidth
@@ -283,11 +287,12 @@ function AddMovie() {
                                 <br/>
 
                                 <div className="col-xl-6 mb-3">
+                                <InputLabel id="demo-mutiple-chip-label"><strong style={{color:'black'}}>Price</strong></InputLabel>
                                     <OutlinedInput className='form_input'
                                                    type="text"
                                                    name="price"
                                                    id="price"
-                                                   placeholder="Price"
+                                                   placeholder="LKR."
                                                    onChange={(e) => setPrice(e.target.value)}
                                                    required fullWidth
                                                    inputProps={{style: {padding: 12}}}
@@ -295,8 +300,8 @@ function AddMovie() {
                                 </div>
                                 <br/>
 
-                                <div className="col-xl-12 mb-3">
-                                    <InputLabel id="demo-mutiple-chip-label"><strong>Available Day</strong></InputLabel>
+                                <div className="col-xl-6 mb-3">
+                                    <InputLabel id="demo-mutiple-chip-label"><strong style={{color:'black'}}>Available Show Times</strong></InputLabel>
                                     <Select className='form_input'
                                             id="demo-mutiple-chip"
                                             multiple fullWidth
@@ -323,7 +328,7 @@ function AddMovie() {
 
                                 <MuiPickersUtilsProvider utils={DateFnsUtils}>
                                     <div className="col-xl-6 mb-3 ">
-                                        <KeyboardTimePicker className='form_input'
+                                        <KeyboardTimePicker className='form_input' style={{marginLeft:-200}}
                                                             margin="normal"
                                                             id="time-picker"
                                                             label="Time From"
@@ -335,7 +340,7 @@ function AddMovie() {
                                         />
                                     </div>
                                     <div className="col-xl-6 mb-3">
-                                        <KeyboardTimePicker className='form_input'
+                                        <KeyboardTimePicker className='form_input' style={{marginLeft:700,marginTop:-72}}
                                                             margin="normal"
                                                             id="time-picker"
                                                             label="Time To"
@@ -354,9 +359,9 @@ function AddMovie() {
                                 <div className="col-4 ">
 
                                     {previewSource ?
-                                        <img src={previewSource} style={{borderRadius:0}} alt="preview" className="previewImg"/>
+                                        <img src={previewSource}  alt="preview" className="previewImg"/>
                                         :
-                                        <img src="/images/img.jpg" style={{borderRadius:0}} className="previewImg" alt="movie image"/>
+                                        <img src="/images/img.jpg"  className="previewImg" alt="movie image"/>
                                     }
                                     <div className="form-group">
                                         <label htmlFor="moviepic">
@@ -369,7 +374,7 @@ function AddMovie() {
                                                 value={fileInputState}
                                             />
 
-                                            <Button   style={{height:50, borderRadius:10}} className="button2" color="primary" variant="contained"
+                                            <Button   style={{height:50, borderRadius:10,marginLeft:50}} className="button2" color="primary" variant="contained"
                                                     component="span">
                                                 <AddAPhotoIcon/> &nbsp; Upload Banner
                                             </Button>
